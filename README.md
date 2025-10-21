@@ -1,0 +1,2 @@
+# PensamentoComp_JulioTasca
+Trabalho
