@@ -22,7 +22,7 @@ def menu_principal():
     while True:
         limpar_tela()
         print("="*50)
-        print("             Loja de Roupa Python Dress")
+        print("============Python Dress============")
         print("="*50)
         print("1) Cadastrar produto")
         print("2) Listar produtos")
@@ -94,6 +94,7 @@ if __name__ == "__main__":
         menu_principal()
     except KeyboardInterrupt:
         print("\nInterrompido pelo usuário. Saindo...")
+
 
 
 
