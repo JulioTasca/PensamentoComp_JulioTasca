@@ -1,4 +1,3 @@
-
 import csv
 import os
 from datetime import datetime
@@ -228,5 +227,6 @@ def excluir_produto(produtos):
     except Exception as e:
         print(f"Erro ao excluir produto: ")
         return False
+
 
 
