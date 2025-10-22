@@ -9,7 +9,6 @@ ARQ_PRODUTOS = os.path.join(DADOS_DIR, "produtos.csv")
 ARQ_LOG = os.path.join(DADOS_DIR, "log.txt")
 CSV_HEADERS = ["id","nome","categoria","tamanho","preco","quantidade","descricao"]
 
-
 def garantir_arquivos():
     os.makedirs(DADOS_DIR, exist_ok=True)
     if not os.path.exists(ARQ_PRODUTOS):
@@ -217,6 +216,7 @@ def excluir_produto(produtos):
     except Exception as e:
         print(f"Erro ao excluir produto: ")
         return False
+
 
 
 
