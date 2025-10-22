@@ -2,10 +2,10 @@ from funcoes import (
     garantir_arquivos, carregar_produtos, cadastrar_produto,
     listar_produtos, editar_produto, excluir_produto, log_action
 )
-
 import os
 import sys
 import time
+
 
 
 def limpar_tela():
@@ -94,3 +94,4 @@ if __name__ == "__main__":
         menu_principal()
     except KeyboardInterrupt:
         print("\nInterrompido pelo usuário. Saindo...")
+
