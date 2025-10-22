@@ -2,7 +2,9 @@
 Loja de roupas 
 
 Nome: Júlio Vinicius Tasca Mendes
+
 RA: 1138971
+
 Tema: Simulador de loja
 
 Descrição do sistema
