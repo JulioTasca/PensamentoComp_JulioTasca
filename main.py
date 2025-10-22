@@ -1,3 +1,4 @@
+
 from funcoes import (
     garantir_arquivos, carregar_produtos, cadastrar_produto,
     listar_produtos, editar_produto, excluir_produto, log_action
@@ -94,4 +95,5 @@ if __name__ == "__main__":
         menu_principal()
     except KeyboardInterrupt:
         print("\nInterrompido pelo usuário. Saindo...")
+
 
