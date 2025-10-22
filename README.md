@@ -13,5 +13,5 @@ Descrição do sistema
 Tecnologias utilizadas
 - Python 3.x
 - Manipulação de arquivos, dicionários, funções, tratamento de erros.
-- Bibliotecas do python (datetime, os...)
+- Bibliotecas do python (datetime, os)
 - Estrutura de múltiplos arquivos.
