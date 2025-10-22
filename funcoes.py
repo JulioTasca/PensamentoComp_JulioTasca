@@ -11,7 +11,6 @@ CSV_HEADERS = ["id","nome","categoria","tamanho","preco","quantidade","descricao
 
 
 def garantir_arquivos():
-    """Garante existência da pasta e arquivos com cabeçalho."""
     os.makedirs(DADOS_DIR, exist_ok=True)
     if not os.path.exists(ARQ_PRODUTOS):
         try:
@@ -31,7 +30,6 @@ def agora_str():
 
 
 def log_action(acao):
-    """Grava no arquivo de log a ação com data/hora."""
     garantir_arquivos()
     linha = f"[{agora_str()}] {acao}\n"
     try:
@@ -42,7 +40,6 @@ def log_action(acao):
 
 
 def carregar_produtos():
-    """Lê produtos do CSV e retorna lista de dicionários."""
     garantir_arquivos()
     produtos = []
     try:
@@ -61,7 +58,6 @@ def carregar_produtos():
 
 
 def salvar_produtos(produtos):
-    """Salva lista de dicionários no CSV (sobrescreve)."""
     garantir_arquivos()
     try:
         with open(ARQ_PRODUTOS, mode="w", newline="", encoding="utf-8") as f:
@@ -83,14 +79,12 @@ def salvar_produtos(produtos):
 
 
 def gerar_id(produtos):
-    """Gera novo ID numérico (string) incremental."""
     ids = [int(p["id"]) for p in produtos if p.get("id") and str(p["id"]).isdigit()]
     novo = max(ids)+1 if ids else 1
     return str(novo)
 
 
 def cadastrar_produto(produtos):
-    """Interage com o usuário para cadastrar um produto; retorna True se cadastrado."""
     try:
         print(f"\n--- Cadastro de Produto ---")
         nome = input("Nome: ").strip()
@@ -135,7 +129,6 @@ def cadastrar_produto(produtos):
 
 
 def listar_produtos(produtos, mostrar_tudo=True):
-    """Lista produtos no terminal. mostrar_tudo False exibe apenas resumo."""
     print(f"\n--- Lista de Produtos ({len(produtos)} registros) ---")
     if not produtos:
         print(f"Nenhum produto cadastrado.")
@@ -152,14 +145,12 @@ def listar_produtos(produtos, mostrar_tudo=True):
 
 
 def encontrar_produto(produtos, id_busca):
-    """Retorna (produto, idx) ou (None, None)."""
     for idx, p in enumerate(produtos):
         if str(p.get("id")) == str(id_busca):
             return p, idx
     return None, None
 
 def editar_produto(produtos):
-    """Edita produto por ID."""
     try:
         id_busca = input("Informe o ID do produto para editar: ").strip()
         p, idx = encontrar_produto(produtos, id_busca)
@@ -208,7 +199,6 @@ def editar_produto(produtos):
         return False
 
 def excluir_produto(produtos):
-    """Exclui produto por ID (com confirmação)."""
     try:
         id_busca = input("Informe o ID do produto para excluir: ").strip()
         p, idx = encontrar_produto(produtos, id_busca)
@@ -227,6 +217,7 @@ def excluir_produto(produtos):
     except Exception as e:
         print(f"Erro ao excluir produto: ")
         return False
+
 
 
 
