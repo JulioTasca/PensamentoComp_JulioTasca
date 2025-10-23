@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 
 
-
 DADOS_DIR = "dados"
 ARQ_PRODUTOS = os.path.join(DADOS_DIR, "produtos.csv")
 ARQ_LOG = os.path.join(DADOS_DIR, "log.txt")
@@ -216,6 +215,7 @@ def excluir_produto(produtos):
     except Exception as e:
         print(f"Erro ao excluir produto: ")
         return False
+
 
 
 
